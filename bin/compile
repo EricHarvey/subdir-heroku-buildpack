@@ -6,8 +6,6 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
 if [ -f $ENV_DIR/PROJECT_PATH ]; then
-  ls $BUILD_DIR
-	echo "HELLO WORLD"
 	rm $BUILD_DIR/api/extractions
 	rm $BUILD_DIR/api/ext_lib
   cp -R $BUILD_DIR/ext_lib $BUILD_DIR/api
