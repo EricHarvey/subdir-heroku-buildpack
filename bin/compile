@@ -6,10 +6,10 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
 if [ -f $ENV_DIR/PROJECT_PATH ]; then
-  ls
+  ls $BUILD_DIR
 	echo "HELLO WORLD"
-  cp -R $ENV_DIR/ext_lib $ENV_DIR/api
-  cp -R $ENV_DIR/extractions $ENV_DIR/api
+  cp -R $BUILD_DIR/ext_lib $BUILD_DIR/api
+  cp -R $BUILD_DIR/extractions $BUILD_DIR/api
 	PROJECT_PATH=`cat $ENV_DIR/PROJECT_PATH`
 	if [ -d $BUILD_DIR/$PROJECT_PATH ]; then
 		echo "-----> Subdir buildpack in $PROJECT_PATH"
