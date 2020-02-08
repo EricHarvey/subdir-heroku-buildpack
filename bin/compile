@@ -8,8 +8,10 @@ ENV_DIR=${3:-}
 if [ -f $ENV_DIR/PROJECT_PATH ]; then
   ls $BUILD_DIR
 	echo "HELLO WORLD"
-  cp -Rf $BUILD_DIR/ext_lib $BUILD_DIR/api
-  cp -Rf $BUILD_DIR/extractions $BUILD_DIR/api
+	rm $BUILD_DIR/api/extractions
+	rm $BUILD_DIR/api/ext_lib
+  cp -R $BUILD_DIR/ext_lib $BUILD_DIR/api
+  cp -R $BUILD_DIR/extractions $BUILD_DIR/api
 	PROJECT_PATH=`cat $ENV_DIR/PROJECT_PATH`
 	if [ -d $BUILD_DIR/$PROJECT_PATH ]; then
 		echo "-----> Subdir buildpack in $PROJECT_PATH"
