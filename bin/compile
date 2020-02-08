@@ -6,8 +6,8 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
 if [ -f $ENV_DIR/PROJECT_PATH ]; then
-  cp -R $ENV_DIR/ext_lib $ENV_DIR/PROJECT_PATH
-  cp -R $ENV_DIR/extractions $ENV_DIR/PROJECT_PATH
+  cp -R $ENV_DIR/ext_lib $ENV_DIR/api
+  cp -R $ENV_DIR/extractions $ENV_DIR/api
 	PROJECT_PATH=`cat $ENV_DIR/PROJECT_PATH`
 	if [ -d $BUILD_DIR/$PROJECT_PATH ]; then
 		echo "-----> Subdir buildpack in $PROJECT_PATH"
